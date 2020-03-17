@@ -1,23 +1,54 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Wonderland</title>
+    <link rel="stylesheet" href="{% static 'css/index.css'%}"/>
+<!--    <link rel="stylesheet" href="{% static 'js/index.js'%}"/>-->
 </head>
 <body>
-<div>
-    <h1>!!!WONDERLAND!!! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Welcome to our project! </h1>
+<div id="main-div">
+
+<!--<div id="title-div">-->
+    <span id="main-title">WonderLand</span>
+<!--</div>-->
+<!--<div id="link-div">-->
+    <span id="link-title-1"> <a href="category/"> ALL </a></span>
+    <span id="link-title-2">  <a href="about/">About</a></span>
+    <span id="link-title-3" ><a href="faq/">Q&A</a></span>
+<!--</div>-->
+<!--    <div id="button-div">-->
+        <span id="button-span">
+            <button class="button">Login</button>
+            <button class="button">Register</button>
+        </span>
+<!--    </div>-->
+</div>
+
+
+<!--    <strong>{{ boldmessage }}</strong><br/>-->
+    <div id="pic-div" OnLoad="swapPic()">
+            <img   src="{% static 'images/stonehenge.jpg' %}"
+         alt="Picture of Stonehenge" />
+<!--        <img   src="{% static 'images/colosseum.jpg' %}"-->
+<!--         alt="Picture of Colosseum" />-->
+<!--        <img   src="{% static 'images/Alhambra.jpg' %}"-->
+<!--         alt="Picture of Alhambra" />-->
+        </br>
+
+    </div>
+<div id="category-div">
+    <span class="category-span"> Explored by </span></br></br>
+    <span class="category-span"> Category</span></br></br>
+    <span class="category-span"> Category</span></br>
 
 </div>
 
-<div>
-{#    teamproject! <br/>#}<br>
-    <strong>{{ boldmessage }}</strong><br/>
-
-    <img src="{% static 'images/stonehenge.jpg' %}"
-         alt="Picture of Stonehenge" /></br>
-     <a href="about/">About</a><br/>
+<div id="recommended-div">
+<span class="category-span"> The Best Wonders </span></br></br>
 </div>
+
+
 </body>
 </html>

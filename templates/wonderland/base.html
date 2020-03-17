@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load wonderland_template_tags %}
+<html lang="en">
+<head>
+    <title> Rango -
+        {% block title_block %}
+            How to Tango with Django!
+        {% endblock %}
+    </title>
+</head>
+<body>
+  <div>
+        <ul>
+            <a href="{% url 'wonderland:index' %}">Wonderland</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <a href="{% url 'wonderland:category' %}">ALL</a>&nbsp;&nbsp;
+            <a href="{% url 'wonderland:about' %}">About</a>&nbsp;&nbsp;
+            <a href="{% url 'wonderland:questionanswer' %}">Q&A</a>&nbsp;&nbsp;
+            {% if user.is_authenticated %}
+                <!-- Show these links when the user is logged in -->
+
+                <a href="{% url 'wonderland:logout' %}">Logout</a>
+
+            {% else %}
+                <!-- Show these links when the user is NOT logged in -->
+                <a href="{% url 'wonderland:register' %}">Sign Up</a>&nbsp;&nbsp;
+                <a href="{% url 'wonderland:login' %}">Login</a>
+            {% endif %}
+            <!-- Outside the conditional statements, ALWAYS show -->
+
+        </ul>
+    </div>
+    <div>
+        {% block body_block %}
+            <div>
+                {% block sidebar_block %}
+
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </div>
+    <hr />
+
+
+
+</body>
+</html>
